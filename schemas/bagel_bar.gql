@@ -1,0 +1,81 @@
+define
+
+
+################
+## ATTRIBUTES ##
+################
+name sub attribute,
+    value string;
+
+address sub attribute,
+    value string;
+
+phone-number sub attribute,
+    value string;
+
+price sub attribute,
+    value double;
+
+description sub attribute,
+    value string;
+
+spice-level sub attribute,
+    value string,
+    regex "^(none|mild|medium|hot)$";
+
+additional-cost sub price;
+price-reduction sub price;
+
+################
+##  ENTITIES  ##
+################
+
+restaurant sub entity,
+    has name;
+    has address;
+    has phone-number;
+
+menu sub entity,
+    has name;
+    plays menu-with-items;
+    
+food sub entity,
+    has name;
+    has price;
+    has description;
+    plays menu-item-made;
+    plays item-on-menu;
+
+ingredient sub entity,
+    has name;
+    has spice-level;
+    plays made-with-ingredient;
+    plays topping-ingredient;
+
+
+#####################
+##  RELATIONSHIPS  ##
+#####################
+
+restaurant-menu sub relation
+    relates restaurant-with-menu;
+    relates menu-for-restaurant;
+
+menu-item sub relation,
+    relates menu-with-items;
+    relates item-on-menu;
+
+made-with sub relation,
+    relates menu-item-made,
+    relates made-with-ingredient;
+
+topping sub relation,
+    relates menu-item,
+    relates topping-ingredient;
+    has additional-cost;
+
+on-special sub relation,
+    relates special-item;
+    has price-reduction;
+
+commit;

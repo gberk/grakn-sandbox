@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraknScripts", "GraknScripts\GraknScripts.csproj", "{A9E1B790-6C70-4C69-BD5D-21B2B3154636}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9E1B790-6C70-4C69-BD5D-21B2B3154636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9E1B790-6C70-4C69-BD5D-21B2B3154636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9E1B790-6C70-4C69-BD5D-21B2B3154636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9E1B790-6C70-4C69-BD5D-21B2B3154636}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBAC6951-B269-4EA9-88E2-744CE0C1E577}
+	EndGlobalSection
+EndGlobal
