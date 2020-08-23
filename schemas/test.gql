@@ -1,0 +1,25 @@
+define
+
+restaurant sub entity,
+    has name;
+    has address;
+    has phone-number;
+
+menu sub entity,
+    has name;
+    
+menu-item sub entity,
+    has name;
+    has price;
+    has description;
+
+special sub menu-item;
+
+ingredient sub entity,
+    has name;
+    has spice-level;
+
+add-on sub ingredient
+    has additional-cost;
+
+commit;
