@@ -1,0 +1,44 @@
+insert $r isa restaurant,
+    has name "Gavin's Bagel Bar",
+    has address "62 Downer Ave",
+    has phone-number "732-546-4315";
+
+insert $bm isa menu,
+    has name "Breakfast";
+
+insert $lm isa menu,
+    has name "Lunch";
+
+insert $bec isa food,
+    has name "Bacon egg and cheese",
+    has description "Breakfast sandwich with bacon egg and cheese served on a bagel",
+    has price 5.50
+
+insert $bec isa food,
+    has name "Sausage egg and cheese",
+    has description "Breakfast sandwich with bacon egg and cheese served on a bagel",
+    has price 5.50;
+
+insert $ib isa ingredient,
+    has name "bacon",
+    has spice-level "none";
+
+insert $ie isa ingredient,
+    has name "egg",
+    has spice-level "none";
+
+insert $ic isa ingredient,
+    has name "cheese",
+    has spice-level "none";
+    
+insert $is isa ingredient,
+    has name "sausage",
+    has spice-level "none";
+
+insert $ibagel isa ingredient,
+    has name "bagel",
+    has spice-level "none";
+
+insert $isri isa ingredient,
+    has name "sriracha",
+    has spice-level "medium";

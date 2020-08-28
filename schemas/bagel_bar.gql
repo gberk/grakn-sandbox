@@ -78,3 +78,7 @@ topping sub relation,
 on-special sub relation,
     relates special-item,
     has price-reduction;
+
+    ##Future schema changes
+    ##"Comes with" choice of bagel vs english muffin
+    ##Orders
