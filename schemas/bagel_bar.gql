@@ -80,5 +80,5 @@ on-special sub relation,
     has price-reduction;
 
     ##Future schema changes
-    ##"Comes with" choice of bagel vs english muffin
+    ##"Comes with" choice of bagel vs english muffin, or sides of coleslaw
     ##Orders

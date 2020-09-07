@@ -14,10 +14,19 @@ insert $bec isa food,
     has description "Breakfast sandwich with bacon egg and cheese served on a bagel",
     has price 5.50
 
-insert $bec isa food,
+insert $sec isa food,
     has name "Sausage egg and cheese",
     has description "Breakfast sandwich with bacon egg and cheese served on a bagel",
     has price 5.50;
+
+insert $dia isa food,
+    has name "Hastag",
+    has description "The ultimate breakfast sandwich with sausage egg and cheese on a bagel, topped with a hashbrown and sriracha",
+    has price 7.50;
+
+insert $tclub isa food,
+    has name "Turkey club",
+    has description "Turkey sandwich with bacon lettuce and tomato, cheese optional"
 
 insert $ib isa ingredient,
     has name "bacon",
@@ -39,6 +48,118 @@ insert $ibagel isa ingredient,
     has name "bagel",
     has spice-level "none";
 
+insert $ibagel isa ingredient,
+    has name "hashbrown",
+    has spice-level "none";
+
 insert $isri isa ingredient,
     has name "sriracha",
     has spice-level "medium";
+
+
+#####################
+##  RELATIONSHIPS  ##
+#####################
+
+##  MENUS  ##
+match
+  $bmenu isa menu, has name "Breakfast";
+  $res isa restaurant, has name "Gavin's Bagel Bar";
+insert $gbb-bmenu (restaurant-with-menu: $res, menu-for-restaurant: $bmenu) isa restaurant-menu;
+
+match
+  $lmenu isa menu, has name "Lunch";
+  $res isa restaurant, has name "Gavin's Bagel Bar";
+insert $gbb-lmenu (restaurant-with-menu: $res, menu-for-restaurant: $lmenu) isa restaurant-menu;
+
+## MENU ITEMS ##
+match
+    $menu isa menu, has name "Breakfast";
+    $bec isa food, has name "Bacon egg and cheese";
+insert $bec-menu (menu-with-items: $menu, item-on-menu: $bec) isa menu-item;
+
+match
+    $menu isa menu, has name "Breakfast";
+    $bec isa food, has name "Sausage egg and cheese";
+insert $bec-menu (menu-with-items: $menu, item-on-menu: $bec) isa menu-item;
+
+match
+    $menu isa menu, has name "Breakfast";
+    $bec isa food, has name "Hashtag";
+insert $bec-menu (menu-with-items: $menu, item-on-menu: $bec) isa menu-item;
+
+match
+    $menu isa menu, has name "Lunch";
+    $bec isa food, has name "Turkey club";
+insert $bec-menu (menu-with-items: $menu, item-on-menu: $bec) isa menu-item;
+
+## FOOD INGREDIENTS ##
+match
+    $bec isa food, has name "Bacon egg and cheese";
+    $ing isa ingredient, has name "bacon";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Bacon egg and cheese";
+    $ing isa ingredient, has name "egg";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Bacon egg and cheese";
+    $ing isa ingredient, has name "cheese";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Bacon egg and cheese";
+    $ing isa ingredient, has name "bagel";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Sausage egg and cheese";
+    $ing isa ingredient, has name "bagel";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Sausage egg and cheese";
+    $ing isa ingredient, has name "sausage";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Sausage egg and cheese";
+    $ing isa ingredient, has name "egg";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Sausage egg and cheese";
+    $ing isa ingredient, has name "cheese";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Hashtag";
+    $ing isa ingredient, has name "sausage";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Hashtag";
+    $ing isa ingredient, has name "egg";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Hashtag";
+    $ing isa ingredient, has name "cheese";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Hashtag";
+    $ing isa ingredient, has name "bagel";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Hashtag";
+    $ing isa ingredient, has name "sriracha";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Hashtag";
+    $ing isa ingredient, has name "hasbrown";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
