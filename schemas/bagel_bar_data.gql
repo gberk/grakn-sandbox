@@ -26,7 +26,8 @@ insert $dia isa food,
 
 insert $tclub isa food,
     has name "Turkey club",
-    has description "Turkey sandwich with bacon lettuce and tomato, cheese optional"
+    has description "Turkey sandwich with bacon lettuce and tomato, cheese optional",
+    has price 8.00
 
 insert $ib isa ingredient,
     has name "bacon",
@@ -51,6 +52,15 @@ insert $ibagel isa ingredient,
 insert $ibagel isa ingredient,
     has name "hashbrown",
     has spice-level "none";
+
+insert $ibagel isa ingredient,
+    has name "avocado",
+    has spice-level "none";
+
+insert $ibagel isa ingredient,
+    has name "turkey",
+    has spice-level "none";
+
 
 insert $isri isa ingredient,
     has name "sriracha",
@@ -163,3 +173,36 @@ match
     $bec isa food, has name "Hashtag";
     $ing isa ingredient, has name "hasbrown";
 insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Turkey club";
+    $ing isa ingredient, has name "bagel";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Turkey club";
+    $ing isa ingredient, has name "turkey";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Turkey club";
+    $ing isa ingredient, has name "bacon";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+match
+    $bec isa food, has name "Turkey club";
+    $ing isa ingredient, has name "bagel";
+insert $bec-ing (menu-item-made: $bec, made-with-ingredient: $ing) isa made-with;
+
+## TOPPINGS ##
+match 
+    $food isa food, has name "Turkey club";
+    $top isa ingredient, has name "avocado";
+insert $food-top (menu-item-made: $food, topping-ingredient: $top) isa topping;
+    $food-top has additional-price 1.00;
+
+match 
+    $food isa food, has name "Turkey club";
+    $top isa ingredient, has name "cheese";
+insert $food-top (menu-item-made: $food, topping-ingredient: $top) isa topping;
+    $food-top has additional-price 0.50;
