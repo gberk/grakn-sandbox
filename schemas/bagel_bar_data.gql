@@ -12,7 +12,7 @@ insert $lm isa menu,
 insert $bec isa food,
     has name "Bacon egg and cheese",
     has description "Breakfast sandwich with bacon egg and cheese served on a bagel",
-    has price 5.50
+    has price 5.50;
 
 insert $sec isa food,
     has name "Sausage egg and cheese",
@@ -27,7 +27,7 @@ insert $dia isa food,
 insert $tclub isa food,
     has name "Turkey club",
     has description "Turkey sandwich with bacon lettuce and tomato, cheese optional",
-    has price 8.00
+    has price 8.00;
 
 insert $ib isa ingredient,
     has name "bacon",
@@ -199,10 +199,10 @@ match
     $food isa food, has name "Turkey club";
     $top isa ingredient, has name "avocado";
 insert $food-top (menu-item-made: $food, topping-ingredient: $top) isa topping;
-    $food-top has additional-price 1.00;
+    $food-top has additional-cost 1.00;
 
 match 
     $food isa food, has name "Turkey club";
     $top isa ingredient, has name "cheese";
 insert $food-top (menu-item-made: $food, topping-ingredient: $top) isa topping;
-    $food-top has additional-price 0.50;
+    $food-top has additional-cost 0.50;

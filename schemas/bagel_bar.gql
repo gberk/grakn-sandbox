@@ -79,6 +79,6 @@ on-special sub relation,
     relates special-item,
     has price-reduction;
 
-    ##Future schema changes
-    ##"Comes with" choice of bagel vs english muffin, or sides of coleslaw
-    ##Orders
+##Future schema changes
+##"Comes with" choice of bagel vs english muffin, or sides of coleslaw
+##Orders
