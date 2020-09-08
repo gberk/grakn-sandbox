@@ -20,7 +20,6 @@ router.get('/query/voicify', async (req: Request, res: Response) => {
         });
 
     var result = await repo.query(queryToExecute);
-    console.log(result);
 
     var voicifyResponse = {
         data: {
@@ -40,9 +39,7 @@ router.get('/query/raw', async (req: Request, res: Response) => {
         });
 
     var result = await repo.query(queryToExecute);
-    console.log(result);
-
-    res.send().json({
+    res.json({
         data: result
     });
 });

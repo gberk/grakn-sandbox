@@ -11,22 +11,23 @@ class GraknRepository {
 
     async query(query:string) : Promise<any>
     {
-        const [readSession, session, client] = this.openReadSession();
-        let answerIterator = await readSession.query(query);
-        this.closeReadSession(readSession, session, client);
-        return answerIterator.collect();
+        const [readTransaction, session, client] = await this.openReadSession();
+        let answerIterator = await readTransaction.query(query);
+        await this.closeReadSession(readTransaction, session, client);
+        var collectedResult = await answerIterator.collect();
+        return collectedResult;
     }
-    private closeReadSession(readSession, session, client) {
-        readSession.close();
-        session.close();
-        client.close();
+    private async closeReadSession(readSession, session, client) {
+        await readSession.close();
+        await session.close();
+        await client.close();
     }
 
-    private openReadSession() {
+    private async openReadSession() {
         const client = new GraknClient(this._location);
-        const session = client.session(this._keyspace);
-        const readSession = session.transaction().read();
-        return [readSession, session, client];
+        const session = await client.session(this._keyspace);
+        const readTransaction = await session.transaction().read();
+        return [readTransaction, session, client];
     }
 }
 
