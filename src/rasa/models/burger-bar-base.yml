@@ -1,0 +1,23 @@
+version: "2.0"
+nlu:
+- intent: restaurant_name
+  examples: |
+    - What is your name
+    - What is the name of your restaurant
+    - What is your restaurant called
+- intent: restaurant_phone
+  examples: |
+    - What is your phone number
+    - What's your phone number
+- intent: restaurant_location
+  examples: |
+    - Where are you located
+    - What is your address
+- intent: menu_general
+  examples: |
+    - What is on your menu
+    - What kind of food do you have
+- intent: menu_lunch
+  examples: |
+    - What do you have for lunch?
+    - Do you serve lunch?
