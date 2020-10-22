@@ -291,3 +291,9 @@ __pycache__/
 
 # Local app settings
 *settings.Local.json
+
+# Built language models
+*.tar.gz
+
+#virtualenv
+venv/

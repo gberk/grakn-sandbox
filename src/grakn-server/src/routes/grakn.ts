@@ -10,37 +10,42 @@ import GraknRepo from '../repos/grakn';
 const router = Router();
 const repo = new GraknRepo("localhost:48555","bagel_bar");
 
-router.get('/query/voicify', async (req: Request, res: Response) => {
+router.post('/query/voicify', async (req: Request, res: Response) => {
     var voicifyRequest = req.body as GeneralWebhookFulfillmentRequest;
     var queryToExecute = voicifyRequest.parameters?.["query"];
-
+    var test = voicifyRequest.parameters?.["{description}"];
     if(!queryToExecute)
         return res.status(BAD_REQUEST).json({
             error: "query not defined"
         });
 
-    var result = await repo.query(queryToExecute);
-
+    var queryResult = await repo.query(queryToExecute);
+    var description = await queryResult[0].get(test).value();
+    console.log(description);
     var voicifyResponse = {
         data: {
-            content: "Query executed"
+            content: description
         }
     } as GeneralFulfillmentResponse;
     
-    res.send().json(voicifyResponse);
+    res.json(voicifyResponse);
 });
 
 router.get('/query/raw', async (req: Request, res: Response) => {
     var queryToExecute = req.query.query as string;
-
     if(!queryToExecute)
         return res.status(BAD_REQUEST).json({
             error: "query not defined"
         });
 
     var result = await repo.query(queryToExecute);
+    result.forEach(element => {
+        console.log(element)
+    });
     res.json({
-        data: result
+        data: {
+            content: result
+        }
     });
 });
 
