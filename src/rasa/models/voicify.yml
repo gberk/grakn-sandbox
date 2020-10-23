@@ -1,0 +1,49 @@
+version: "2.0"
+nlu:
+- intent: EventGeneralSearch
+  examples: |
+    - what is the next [game]("eventName") at the [stadium]("location")
+    - what is the [event]("eventName") [tomorrow]("startDate")
+- intent: EventLocationSearch
+  examples: |
+    - where is the [game]("eventName") [today]("startDate")?
+    - where is the [party]("eventName") [this week]("startDate")?
+- intent: EventStartDateSearch
+  examples: |
+    - what time is the [wedding]("eventName")?
+    - When does the [event]("eventName") start [today]("startDate")?
+    - when is the [event]("eventName") at the [park]("location")?
+- intent: GeneralQuestion
+  examples: |
+    - Show me ("Query")
+    - Do you have ("Query")
+    - Give me a ("Query")
+    - Give me an ("Query")
+    - Tell me ("Query")
+    - Are there ("Query")
+    - Do I ("Query")
+    - How does ("Query")
+    - Where did ("Query")
+    - What were ("Query")
+    - Help me ("Query")
+    - Is there ("Query")
+    - Where's ("Query")
+    - Where is ("Query")
+    - For a ("Query")
+    - Can I ("Query")
+    - I ("Query")
+    - I am ("Query")
+    - I would ("Query")
+    - I want ("Query")
+    - How can I ("Query")
+    - Who are ("Query")
+    - What are ("Query")
+    - Tell me about ("Query")
+    - What is ("Query")
+    - What's ("Query")
+    - How did I ("Query")
+    - How to ("Query")
+    - How should ("Query")
+    - What does ("Query")
+    - What's on ("Query")
+    - What is on ("Query")
