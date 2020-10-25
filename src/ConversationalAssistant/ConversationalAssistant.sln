@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversationalAssistant.LanguageServices", "ConversationalAssistant.Services\ConversationalAssistant.LanguageServices.csproj", "{52AE27BF-D96E-4D21-9CCA-98897ECB7E00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversationalAssistant.Models", "ConversationalAssistant.Models\ConversationalAssistant.Models.csproj", "{B9FC7BE7-F4A3-4289-B0A1-1D6492E35375}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversationalAssistant.Core.Models.Assistant", "ConversationalAssistant.Models\ConversationalAssistant.Core.Models.Assistant.csproj", "{B9FC7BE7-F4A3-4289-B0A1-1D6492E35375}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversationalAssistant.Api", "ConversationalAssistant.Api\ConversationalAssistant.Api.csproj", "{E158FCDE-5E60-4C08-A537-43C55161B101}"
 EndProject
@@ -21,7 +21,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{2BC71ECA-9B16-42BD-9849-14FBAFAF93FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversationalAssistant.ContextServices", "ConversationalAssistant.ContextServices\ConversationalAssistant.ContextServices.csproj", "{B1960E6B-B7E3-4458-8594-E4B25D35489F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversationalAssistant.Infrastructure.Services.Assistant", "ConversationalAssistant.ContextServices\ConversationalAssistant.Infrastructure.Services.Assistant.csproj", "{B1960E6B-B7E3-4458-8594-E4B25D35489F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversationalAssistant.Clients.Shared", "ConversationalAssistant.Clients.Shared\ConversationalAssistant.Clients.Shared.csproj", "{DAEA847B-3AF5-401B-803C-D1FA00562CD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{A7414D49-9D74-411F-9F69-B55569D80D58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{84A5569C-4DEE-4CDF-827D-9EAFF83EBAC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversationalAssistant.Core.Services.Assistant", "ConversationalAssistant.Core.Services.Assistant\ConversationalAssistant.Core.Services.Assistant.csproj", "{1BCD9C5F-7321-4533-AC81-6D90AEC84734}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B39AEB18-7015-44A1-801E-BFAC6C58301F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversationalAssitant.Core.Services.Utilities", "ConversationalAssitant.Core.Services.Utilities\ConversationalAssitant.Core.Services.Utilities.csproj", "{6FDF3BCD-65E0-4E21-BD4C-0B78EF400736}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversationalAssistant.Infrastructure.Services.Utilities", "ConversationalAssistant.Infrastructure.Services.Utilities\ConversationalAssistant.Infrastructure.Services.Utilities.csproj", "{559BCA72-661F-4FAA-9467-50208DA0D6D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConversationalAssistant.Core.Models.UtilityServices", "ConversationalAssistant.Core.Models.UtilityServices\ConversationalAssistant.Core.Models.UtilityServices.csproj", "{9C0DFC20-1461-4624-AA57-15E0599E9359}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,17 +61,45 @@ Global
 		{B1960E6B-B7E3-4458-8594-E4B25D35489F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1960E6B-B7E3-4458-8594-E4B25D35489F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1960E6B-B7E3-4458-8594-E4B25D35489F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAEA847B-3AF5-401B-803C-D1FA00562CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEA847B-3AF5-401B-803C-D1FA00562CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEA847B-3AF5-401B-803C-D1FA00562CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEA847B-3AF5-401B-803C-D1FA00562CD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BCD9C5F-7321-4533-AC81-6D90AEC84734}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BCD9C5F-7321-4533-AC81-6D90AEC84734}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BCD9C5F-7321-4533-AC81-6D90AEC84734}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BCD9C5F-7321-4533-AC81-6D90AEC84734}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FDF3BCD-65E0-4E21-BD4C-0B78EF400736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FDF3BCD-65E0-4E21-BD4C-0B78EF400736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FDF3BCD-65E0-4E21-BD4C-0B78EF400736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FDF3BCD-65E0-4E21-BD4C-0B78EF400736}.Release|Any CPU.Build.0 = Release|Any CPU
+		{559BCA72-661F-4FAA-9467-50208DA0D6D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{559BCA72-661F-4FAA-9467-50208DA0D6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{559BCA72-661F-4FAA-9467-50208DA0D6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{559BCA72-661F-4FAA-9467-50208DA0D6D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C0DFC20-1461-4624-AA57-15E0599E9359}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C0DFC20-1461-4624-AA57-15E0599E9359}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0DFC20-1461-4624-AA57-15E0599E9359}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C0DFC20-1461-4624-AA57-15E0599E9359}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{52AE27BF-D96E-4D21-9CCA-98897ECB7E00} = {F12EBAA3-9601-4356-8E34-D2018E32EA3A}
-		{B9FC7BE7-F4A3-4289-B0A1-1D6492E35375} = {C421B84E-E929-437D-924E-593D5F6F0DED}
+		{B9FC7BE7-F4A3-4289-B0A1-1D6492E35375} = {A7414D49-9D74-411F-9F69-B55569D80D58}
 		{E158FCDE-5E60-4C08-A537-43C55161B101} = {80BC7F1A-E9F2-44E5-AAF2-4245C3D54159}
 		{F12EBAA3-9601-4356-8E34-D2018E32EA3A} = {28F0E585-7016-4010-AB5D-D651D3C32C2F}
 		{2BC71ECA-9B16-42BD-9849-14FBAFAF93FA} = {28F0E585-7016-4010-AB5D-D651D3C32C2F}
 		{B1960E6B-B7E3-4458-8594-E4B25D35489F} = {F12EBAA3-9601-4356-8E34-D2018E32EA3A}
+		{DAEA847B-3AF5-401B-803C-D1FA00562CD6} = {80BC7F1A-E9F2-44E5-AAF2-4245C3D54159}
+		{A7414D49-9D74-411F-9F69-B55569D80D58} = {C421B84E-E929-437D-924E-593D5F6F0DED}
+		{84A5569C-4DEE-4CDF-827D-9EAFF83EBAC8} = {C421B84E-E929-437D-924E-593D5F6F0DED}
+		{1BCD9C5F-7321-4533-AC81-6D90AEC84734} = {84A5569C-4DEE-4CDF-827D-9EAFF83EBAC8}
+		{B39AEB18-7015-44A1-801E-BFAC6C58301F} = {C421B84E-E929-437D-924E-593D5F6F0DED}
+		{6FDF3BCD-65E0-4E21-BD4C-0B78EF400736} = {84A5569C-4DEE-4CDF-827D-9EAFF83EBAC8}
+		{559BCA72-661F-4FAA-9467-50208DA0D6D1} = {F12EBAA3-9601-4356-8E34-D2018E32EA3A}
+		{9C0DFC20-1461-4624-AA57-15E0599E9359} = {A7414D49-9D74-411F-9F69-B55569D80D58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBAC6951-B269-4EA9-88E2-744CE0C1E577}

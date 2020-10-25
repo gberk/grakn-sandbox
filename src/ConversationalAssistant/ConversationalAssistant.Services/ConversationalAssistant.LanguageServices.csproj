@@ -7,10 +7,11 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="ServiceResult" Version="1.0.1" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConversationalAssistant.Models\ConversationalAssistant.Models.csproj" />
+    <ProjectReference Include="..\ConversationalAssistant.Models\ConversationalAssistant.Core.Models.Assistant.csproj" />
   </ItemGroup>
 
 </Project>

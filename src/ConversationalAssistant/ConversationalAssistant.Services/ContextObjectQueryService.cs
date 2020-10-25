@@ -1,6 +1,7 @@
 ﻿using ConversationalAssistant.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ServiceResult;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,25 +12,7 @@ namespace ConversationalAssistant.Services
 {
     public class ContextObjectQueryService
     {
-        private readonly List<ContextObject> contextObjectStack;
-
-        public ContextObjectQueryService()
-        {
-            contextObjectStack = new List<ContextObject>();
-        }
-
-        //public Task<bool> PushContextObjectOntoStack(ContextObject contextObject)
-        //{
-        //    contextObjectStack.Push(contextObject);
-        //}
-
-        //public ContextObjectQueryResult QueryContext(string input)
-        //{
-        //    var topObject = contextObjectStack.FirstOrDefault();
-        //    return QueryContextObject(topObject, input);
-        //}
-
-        public ContextObjectQueryResult QueryContextObject(ContextObject contextObject, string input)
+        public Result<ContextObjectQueryResult> QueryContextObject(ContextObject contextObject, string input)
         {
             var languageModel = contextObject.LanguageModel;
             string winningPhrase = "";
@@ -54,13 +37,13 @@ namespace ConversationalAssistant.Services
             JObject jo = JObject.Parse(JsonConvert.SerializeObject(contextObject.Data));
             var token = jo.SelectToken(jsonPath);
 
-            return new ContextObjectQueryResult
+            return new SuccessResult<ContextObjectQueryResult>( new ContextObjectQueryResult
             {
                 Data = JsonConvert.SerializeObject(token),
                 JsonPathMatch = jsonPath,
                 UtteranceMatch = winningPhrase,
                 OriginalObject = contextObject
-            };
+            });
         }
     }
 }

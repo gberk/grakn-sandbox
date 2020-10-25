@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ServiceResult" Version="1.0.1" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConversationalAssistant.Core.Services.Assistant\ConversationalAssistant.Core.Services.Assistant.csproj" />
+    <ProjectReference Include="..\ConversationalAssitant.Core.Services.Utilities\ConversationalAssitant.Core.Services.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

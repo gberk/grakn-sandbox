@@ -7,7 +7,7 @@ namespace ConversationalAssistant.Models
     public class ContextObject
     {
         public string Type { get; set; }
-        public Dictionary<string,object> Data { get; set; }
+        public string Data { get; set; }
         public LanguageModel LanguageModel { get; set; }
     }
 }
